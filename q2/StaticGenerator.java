@@ -1,6 +1,6 @@
 package q2;
 
-public class Generator {
+public class StaticGenerator {
     static double calculation(float number1, float number2, char operation){
         double result = 0.0;
         switch (operation){
