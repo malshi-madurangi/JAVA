@@ -15,7 +15,7 @@ public class StaticGenerator {
                 break;
             case 'j':
                 intNum[1] = ++intNum[1];
-                intNum[2] = 00;
+                intNum[2] = 0;
                 break;
             case 'n':
                 intNum[0] = ++intNum[0];
@@ -23,7 +23,6 @@ public class StaticGenerator {
                 intNum[1] = 0;
                 break;
         }
-        String newVersion = (intNum[0] + "." + intNum[1] + "." + intNum[2]);
-        return newVersion;
+        return (intNum[0] + "." + intNum[1] + "." + intNum[2]);
     }
 }
