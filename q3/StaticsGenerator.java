@@ -16,12 +16,15 @@ public class StaticsGenerator {
         }
         return intArray;
     }
+
     public int getMin(int[] arr){
         return Arrays.stream(arr).min().getAsInt();
     }
+
     public int getMax(int[] arr){
         return Arrays.stream(arr).max().getAsInt();
     }
+
     public double getAvg(int[] arr){
         return Arrays.stream(arr).average().getAsDouble();
     }

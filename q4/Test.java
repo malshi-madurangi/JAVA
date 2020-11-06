@@ -1,11 +1,25 @@
 package q4;
+import java.util.Scanner;
 
 public class Test {
     public static void main(String[] args) {
-        GetValues getValues = new GetValues();
-        int number = getValues.getInputs();
+        runStaticGenerator();
 
+    }
+
+    private static void runStaticGenerator(){
+        int number = getInput();
         StaticGenerator gen = new StaticGenerator();
-        System.out.print("Lucky number : " + gen.luckyNum(number));
+        displayOutput(gen.luckyNum(number));
+    }
+
+    private static int getInput(){
+        Scanner obj = new Scanner(System.in);
+        System.out.print("Number : ");
+        return obj.nextInt();
+    }
+
+    private static void displayOutput(int luckyNum){
+        System.out.print("Lucky number : " + luckyNum);
     }
 }
