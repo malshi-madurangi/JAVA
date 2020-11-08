@@ -1,4 +1,5 @@
 package q2;
+import java.util.Objects;
 import java.util.Scanner;
 
 public class Test {
@@ -8,18 +9,25 @@ public class Test {
 
     private static void runStaticGenerator(){
         Scanner prm = new Scanner(System.in);
-        int option;
+        String option;
         do{
             System.out.println("Do you want to calculate value? (Yes(enter 1) or No(enter 0) :");
-            option = prm.nextInt();
-            if(option == 1){
-                String[] arr = getInput();
-                StaticGenerator gen = new StaticGenerator();
-                displayOutput(gen.calculation(Float.parseFloat(arr[0]), Float.parseFloat(arr[1]),arr[2].charAt(0)));
-            }else {
-                System.out.println("Thank you!!");
+            option = prm.nextLine();
+            switch(option){
+                case "0":
+                    System.out.println("Thank you!!");
+                    break;
+
+                case "1":
+                    String[] arr = getInput();
+                    StaticGenerator gen = new StaticGenerator();
+                    displayOutput(gen.calculation(Float.parseFloat(arr[0]), Float.parseFloat(arr[1]),arr[2].charAt(0)));
+                    break;
+                default:
+                    System.out.println("Invalid Input! Please try again.");
+                    break;
             }
-        }while (option == 1);
+        }while (!Objects.equals(option, "0"));
 
     }
 
