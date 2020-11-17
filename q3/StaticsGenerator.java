@@ -1,7 +1,5 @@
 package q3;
 import java.util.Arrays;
-import java.util.Comparator;
-import java.util.stream.Stream;
 
 public class StaticsGenerator {
     static int[] split(String str){

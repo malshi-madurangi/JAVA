@@ -1,44 +1,55 @@
 package q4;
-import q3.StaticsGenerator;
 
+import java.util.InputMismatchException;
 import java.util.Objects;
 import java.util.Scanner;
 
 public class Test {
-    public static void main(String[] args) {
-        runStaticGenerator();
-    }
-
-    private static void runStaticGenerator(){
+    public static void main(String[] args) throws InputMismatchException {
         Scanner prm = new Scanner(System.in);
-        String option;
-        do{
-            System.out.println("Do you want find lucky number? (Yes(enter 1) or No(enter 0) : ");
-            option = prm.nextLine();
-            switch(option){
-                case "0":
-                    System.out.println("Thank you!!");
-                    break;
+        String option = null;
+        do {
+            try {
+                System.out.println("Do you want find lucky number? (Yes(enter 1) or No(enter 0) : ");
+                option = prm.nextLine();
 
-                case "1":
-                    int number = getInput();
-                    StaticGenerator gen = new StaticGenerator();
-                    displayOutput(gen.luckyNum(number));
-                    break;
-                default:
-                    System.out.println("Invalid Input! Please try again.");
-                    break;
+                switch(option) {
+                    case "0":
+                        System.out.println("Thank you!!");
+                        break;
+
+                    case "1":
+                        runStaticGenerator();
+                        break;
+
+                    default:
+                        System.out.println("Invalid Input! Please try again.");
+                        break;
+                }
+            }catch(InputMismatchException e) {
+                System.out.println("invalid Input");
+
             }
+
         }while (!Objects.equals(option, "0"));
     }
 
-    private static int getInput(){
+    private static void runStaticGenerator() {
+        int number = getInput();
+        StaticGenerator gen = new StaticGenerator();
+        displayOutput(gen.luckyNum(number));
+
+    }
+
+    private static int getInput() {
         Scanner obj = new Scanner(System.in);
         System.out.print("Number : ");
         return obj.nextInt();
+
     }
 
-    private static void displayOutput(int luckyNum){
+    private static void displayOutput(int luckyNum) {
         System.out.println("Lucky number : " + luckyNum);
+
     }
 }
