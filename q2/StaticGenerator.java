@@ -1,20 +1,26 @@
 package q2;
 
 public class StaticGenerator {
-    static double calculation(float number1, float number2, char operation){
+    private static String[] array;
+    public StaticGenerator(String[] arr) {
+        array = arr;
+
+    }
+
+    static double calculation() {
         double result = 0.0;
-        switch (operation){
+        switch (array[2].charAt(0)){
             case '+':
-                result = (number1+number2);
+                result = (Float.parseFloat(array[0]) + Float.parseFloat(array[1]));
                 break;
             case '-':
-                result = (number1-number2);
+                result = (Float.parseFloat(array[0]) - Float.parseFloat(array[1]));
                 break;
             case '*':
-                result = (number1*number2);
+                result = (Float.parseFloat(array[0]) * Float.parseFloat(array[1]));
                 break;
             case '/':
-                result = (number1/number2);
+                result = (Float.parseFloat(array[0]) / Float.parseFloat(array[1]));
                 break;
             default:
                 System.out.println("Invalid Operation!!");
