@@ -22,6 +22,9 @@ public class StaticGenerator {
                 intNum[2] = 0;
                 intNum[1] = 0;
                 break;
+            default:
+                System.out.println("Invalid Type! Please try again.");
+                break;
         }
         return (intNum[0] + "." + intNum[1] + "." + intNum[2]);
     }

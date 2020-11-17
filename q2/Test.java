@@ -1,37 +1,46 @@
 package q2;
+
 import java.util.Objects;
 import java.util.Scanner;
 
 public class Test {
-    public static void main(String[] args) {
-        runStaticGenerator();
-    }
-
-    private static void runStaticGenerator(){
+    public static void main(String[] args) throws NumberFormatException {
         Scanner prm = new Scanner(System.in);
-        String option;
+        String option = null;
         do{
-            System.out.println("Do you want to calculate value? (Yes(enter 1) or No(enter 0) :");
-            option = prm.nextLine();
-            switch(option){
-                case "0":
-                    System.out.println("Thank you!!");
-                    break;
+            try {
+                System.out.println("Do you want to do calculations ? (Yes(enter 1) or No(enter 0) :");
+                option = prm.nextLine();
 
-                case "1":
-                    String[] arr = getInput();
-                    StaticGenerator gen = new StaticGenerator();
-                    displayOutput(gen.calculation(Float.parseFloat(arr[0]), Float.parseFloat(arr[1]),arr[2].charAt(0)));
-                    break;
-                default:
-                    System.out.println("Invalid Input! Please try again.");
-                    break;
+                switch(option) {
+                    case "0":
+                        System.out.println("Thank you!!");
+                        break;
+
+                    case "1":
+                        runStaticGenerator();
+                        break;
+
+                    default:
+                        System.out.println("Invalid Input! Please try again.");
+                        break;
+                }
+            }catch(NumberFormatException e) {
+                System.out.println("invalid number");
+
             }
+
         }while (!Objects.equals(option, "0"));
+    }
+
+    private static void runStaticGenerator() {
+        String[] arr = getInput();
+        StaticGenerator gen = new StaticGenerator(arr);
+        displayOutput(gen.calculation());
 
     }
 
-    private static String[] getInput(){
+    private static String[] getInput() {
         Scanner obj = new Scanner(System.in);
         System.out.println("Number 1 : ");
         String number1 = obj.nextLine();
@@ -47,7 +56,7 @@ public class Test {
 
     }
 
-    private static void displayOutput(double result){
+    private static void displayOutput(double result) {
         System.out.println("Answer: " + result);
 
     }
