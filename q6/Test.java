@@ -3,12 +3,6 @@ package q6;
 import java.util.Objects;
 import java.util.Scanner;
 
-class InvalidFormatException extends Exception{
-    InvalidFormatException(String s) {
-        super(s);
-    }
-}
-
 public class Test {
     static void validate(String str) throws InvalidFormatException{
         if(!(str.matches("\\d.\\d.\\d{2}"))){
@@ -50,7 +44,7 @@ public class Test {
 
     private static void runStaticGenerator() throws InvalidFormatException {
         String[] arr = getInput();
-        StaticGenerator gen = new StaticGenerator();
+        FindNextVersion gen = new FindNextVersion();
         displayOutput(gen.findNextVersionNumber(arr[0], arr[1].charAt(0)));
 
     }

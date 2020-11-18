@@ -1,6 +1,6 @@
 package q6;
 
-public class StaticGenerator {
+public class FindNextVersion {
     static String findNextVersionNumber(String version, char type) {
         String[] versionNum = version.split("\\.");
         int[] intNum = new int[versionNum.length];

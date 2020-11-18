@@ -3,12 +3,6 @@ package q5;
 import java.util.Objects;
 import java.util.Scanner;
 
-class InvalidPatternException extends Exception {
-    InvalidPatternException(String s) {
-        super(s);
-    }
-}
-
 public class Test {
 
     static void validate(String str) throws InvalidPatternException {
@@ -50,8 +44,8 @@ public class Test {
 
     private static void runStaticGenerator() throws InvalidPatternException {
         String str = getInput();
-        StaticGenerator gen = new StaticGenerator();
-        displayOutput(gen.camelToString(str));
+        CamelToStringConvertor gen = new CamelToStringConvertor(str);
+        displayOutput(gen.camelToString());
 
     }
 

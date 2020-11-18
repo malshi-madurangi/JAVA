@@ -1,6 +1,6 @@
 package q4;
 
-public class StaticGenerator {
+public class LuckyNumber {
     static int realLucky(int x) {
         if (x / 10 == 0) {
             return x;
