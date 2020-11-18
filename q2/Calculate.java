@@ -1,8 +1,8 @@
 package q2;
 
-public class StaticGenerator {
+public class Calculate {
     private static String[] array;
-    public StaticGenerator(String[] arr) {
+    public Calculate(String[] arr) {
         array = arr;
 
     }

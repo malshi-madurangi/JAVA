@@ -36,7 +36,7 @@ public class Test {
 
     private static void runStaticGenerator() {
         int number = getInput();
-        StaticGenerator gen = new StaticGenerator();
+        LuckyNumber gen = new LuckyNumber();
         displayOutput(gen.luckyNum(number));
 
     }

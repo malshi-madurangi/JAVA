@@ -35,7 +35,7 @@ public class Test {
 
     private static void runStaticGenerator() {
         String[] arr = getInput();
-        StaticGenerator gen = new StaticGenerator(arr);
+        Calculate gen = new Calculate(arr);
         displayOutput(gen.calculation());
 
     }
