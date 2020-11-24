@@ -6,7 +6,7 @@ public class FindSwedishChar {
         unicode = code;
     }
 
-    public static String findSwedishChar() {
+    public static String findSwedishChar() throws IllegalStateException {
         String sChar ;
         switch (unicode) {
             case "0196":
@@ -34,7 +34,7 @@ public class FindSwedishChar {
                 break;
 
             default:
-                throw new IllegalStateException("Unexpected value: " + unicode);
+                throw new IllegalStateException("Unexpected Unicode: " + unicode);
         }
 
         return sChar;
